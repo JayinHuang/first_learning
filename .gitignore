@@ -1,0 +1,12 @@
+
+.DS_Store
+.idea/
+.idea_modules/
+core/src/main/org/
+core/target/
+examples/target/
+lib_managed/
+project/.DS_Store
+project/project/
+project/target/
+target/

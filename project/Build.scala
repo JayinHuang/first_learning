@@ -1,5 +1,5 @@
-// Copyright (C) 2011-2012 the original author or authors.
 // See the LICENCE.txt file distributed with this work for additional
+// Copyright (C) 2011-2012 the original author or authors.
 // information regarding copyright ownership.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +14,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import sbt._
 import sbt.Keys._
-import Keys._
+import sbt._
 
 //import sbtassembly.Plugin._
 //import AssemblyKeys._
@@ -54,6 +53,9 @@ object Build extends Build {
     publish := {}
   )
 
+  val sparkVersion = "1.6.0"
+  val scalaVersionPrefix = "_2.11"
+
   def coreSettings = sharedSettings ++ Seq(
     name := "core",
     resolvers ++= Seq(
@@ -63,6 +65,12 @@ object Build extends Build {
     libraryDependencies ++= Seq(
       "com.google.guava" % "guava" % "11.0.1"
       , "com.nativelibs4java" % "javacl" % "1.0.0-RC3"
+      , "org.apache.spark" % ("spark-core" + scalaVersionPrefix) % sparkVersion
+      , "org.apache.spark" % ("spark-streaming" + scalaVersionPrefix) % sparkVersion
+      , "org.apache.spark" % ("spark-sql" + scalaVersionPrefix) % sparkVersion
+      , "org.apache.spark" % ("spark-hive" + scalaVersionPrefix) % sparkVersion
+      , "org.apache.spark" % ("spark-mllib" + scalaVersionPrefix) % sparkVersion
+      , "org.bytedeco" % "javacv" % "1.2"
     )
   )
 

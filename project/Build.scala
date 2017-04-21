@@ -70,7 +70,7 @@ object Build extends Build {
       , "org.apache.spark" % ("spark-sql" + scalaVersionPrefix) % sparkVersion
       , "org.apache.spark" % ("spark-hive" + scalaVersionPrefix) % sparkVersion
       , "org.apache.spark" % ("spark-mllib" + scalaVersionPrefix) % sparkVersion
-      , "org.bytedeco" % "javacv" % "1.2"
+      , "org.seleniumhq.selenium" % "selenium-java" % "2.44.0"
     )
   )
 
